@@ -33,17 +33,29 @@
 # In[1]:
 
 
-print ("'Fibonacci Spiral' = Squares whose side lengths are") 
-print ("successive Fibonacci numbers:  1, 1, 2, 3, 5, 8, 13, 21...")
-
-print ("****See the 'Fibonacci Spiral (FS)*****:") 
+print ("********************************************************************") 
+print ("***'Fibonacci Numbers' are shown as squares whose side lengths *****") 
+print ("*** are successive Fibonacci numbers: 1, 1, 2, 3, 5, 8, 13, 21.. ***")
+print ("********************************************************************") 
 
 from IPython.display import Image
 
-Image('fibonacci.png')
+Image('fibonacci-nb.png')
 
 
 # In[2]:
+
+
+print ("****************************************************************") 
+print ("**'Fibonacci Spiral'= drawing a Spiral into the above squares:**") 
+print ("****************************************************************") 
+
+from IPython.display import Image
+
+Image('fibonacci-sp.png')
+
+
+# In[3]:
 
 
 # First Part: 'Fibonacci Numbers'
@@ -54,7 +66,7 @@ print (" ********** First Part: 'Fibonacci Numbers'**************************")
 print ("*********************************************************************")
 
 
-# In[3]:
+# In[4]:
 
 
 # Start calculation of Fibo
@@ -68,7 +80,7 @@ def recur_fibo(n):
 # End calulation of Fibo
 
 
-# In[4]:
+# In[5]:
 
 
 # Take the input from the user + print the Fibo numbers
@@ -89,22 +101,25 @@ else:
 print ("****end of list of Fibo Numbers****")
 
 
-# ## End of First Part
+# # End of First Part
 # 
 # 
 # 
 # # Second Part: 'Golden Ration'
 
-# In[5]:
+# In[6]:
 
 
 # second part: 'Golden Ratio'
 print("Hello Hermann. Do you want to see the the 'Golden Ratio' numbers until this term? ")
 go = int(input("Then type '1'"))
-if go == 1:            
-   print ("The program calculates 'Golden Ratio'= (Fibo(i+1)/Fibo(i))")
+if go == 1: 
+   print ("******************************************************************") 
+   print ("*** The program calculates 'Golden Ratio'= (Fibo(i+1)/Fibo(i)) ***")
    # Start printing 'Golden Ratio'
+   print ("******************************************************************")
    print ("Please check the values for: 'Golden-Ratio'~1.61803398875")
+# Start printing 'Golden Ratio'
    for i in range(nterms):  
        print(recur_fibo(i+2)/recur_fibo(i+1))
 else:
@@ -113,7 +128,7 @@ else:
 ## End of Second Part
 
 
-# In[6]:
+# In[7]:
 
 
 # print current date and time

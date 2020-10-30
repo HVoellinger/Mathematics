@@ -43,7 +43,6 @@ from IPython.display import Image
 
 Image('collatz5-No27.png')
 
-
 # ## Problem Solution
 # 
 # 1. Create a function collatz that takes an integer n as argument.

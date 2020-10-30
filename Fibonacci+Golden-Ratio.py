@@ -26,8 +26,8 @@
 
 
 print ("********************************************************************") 
-print ("***'Fibonacci Numbers' are shown as squares whose side lengths *****") 
-print ("*** are successive Fibonacci numbers: 1, 1, 2, 3, 5, 8, 13, 21.. ***")
+print ("***'Fibonacci Squares' are shown as squares whose side lengths *****")
+print ("* are successive Fibonacci numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21... *")
 print ("********************************************************************") 
 
 from IPython.display import Image
@@ -40,12 +40,12 @@ Image('fibonacci-nb.png')
 
 ## 'Fibonacci Spiral'
     
-An approximation of the golden spiral created by drawing circular arcs connecting the opposite corners of squares in 
-the Fibonacci tiling; (see preceding image) Fibonacci numbers are strongly related to the golden ratio: Binet's 
-formula expresses the nth Fibonacci number in terms of n and the golden ratio, and implies that the ratio of two 
-consecutive Fibonacci numbers tends to the golden ratio as n increases.
+# An approximation of the golden spiral created by drawing circular arcs connecting the opposite corners of squares in
+# the Fibonacci tiling; (see preceding image) Fibonacci numbers are strongly related to the golden ratio: Binet's
+# formula expresses the nth Fibonacci number in terms of n and the golden ratio, and implies that the ratio of two
+# consecutive Fibonacci numbers tends to the golden ratio as n increases.
 
-A tiling with squares whose side lengths are successive Fibonacci numbers: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144....
+# A tiling with squares whose side lengths are successive Fibonacci numbers:0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144....
 
 
 # In[2]:

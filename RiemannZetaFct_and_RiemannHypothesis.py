@@ -3,8 +3,9 @@
 
 # # Riemann's Zeta-Function and Riemann's Hypothesis 
 #  
-#  Powered by: Dr. Hermann Völlinger, DHBW Stuttgart(Germany); May 2021
+# Powered by: Dr. Hermann Völlinger, DHBW Stuttgart(Germany); May 2021
 # 
+# Prereq.'s: you need to extract the zip-file 'Images.zip' in a directory with name 'Images'
 # 
 # ## Item1: Riemann's Zeta-Function     
 # 
@@ -29,25 +30,46 @@
 #  
 # 
 
+# ### Item1.1: Dirichlet Series of Zeta-Function 
+# 
+# https://en.wikipedia.org/wiki/Dirichlet_series
+# In mathematics, a Dirichlet series is any series of the form of the following picture (see below).  
+# The Dirichlet series of Riemann's Zeta-Function is a complex sequence. It is a special case of general Dirichlet series. Dirichlet series play a variety of important roles in analytic number theory. The most usually seen definition of the Riemann zeta function is a Dirichlet series, as are the Dirichlet L-functions
+
 # In[1]:
 
 
-print ("*** DirichletForm of the Riemann Zeta-Fuction (Euler**** ")
-print ("*** LATEX syntax of zeta-fct for re(z)>1: '$ displaystyle \\zeta(s)=\sum_{n=1}^\infty 1/n^s $' ***")
-
+print("*** DirichletForm of the Riemann Zeta-Fuction (Euler-Function)****") 
+# print("*** LATEX syntax of zeta-fct for re(z)>1: '$ displaystyle \zeta(s)=\sum_{n=1}^\infty 1/n^s $' ***")
 from IPython.display import Image
 
 Image('Images/DirichletForm4Riem-ZetaFct.jpg')
 
 
+# ### Item1.2: The Basel Problem
+# The basel problem is a problem in mathematical analysis with relevance to number theory, first posed by Pietro Mengoli in 1650 and solved by Leonhard Euler in 1734,[1] and read on 5 December 1735 in The Saint Petersburg Academy of Sciences.[2] Since the problem had withstood the attacks of the leading mathematicians of the day, Euler's solution brought him immediate fame when he was twenty-eight. Euler generalised the problem considerably, and his ideas were taken up years later by Bernhard Riemann in his seminal 1859 paper "On the Number of Primes Less Than a Given Magnitude", in which he defined his zeta function and proved its basic properties. The problem is named after Basel, hometown of Euler as well as of the Bernoulli family who unsuccessfully attacked the problem.
+# 
+# The Basel problem asks for the precise summation of the reciprocals of the squares of the natural numbers, i.e. the precise sum of the infinite series:
+# 
+# The sum of the series is approximately equal to 1.644934.[3] The Basel problem asks for the exact sum of this series (in closed form), as well as a proof that this sum is correct. Euler found the exact sum to be pi²/6 and announced this discovery in 1735. His arguments were based on manipulations that were not justified at the time, although he was later proven correct. He produced a truly rigorous proof in 1741.
+
 # In[2]:
 
 
-print ("*** Zero-free_region_for_the_Riemann_zeta-function**** ")
+print("*** Consider the special case s = 2 + i*0 so we get the follw. series: ***")
+print("*** This is the famous 'Basel-Problem' solved by L. Euler in 1735 *******")
+
 from IPython.display import Image
 
-Image('Images/Zero-free_region_for_the_Riemann_zeta-function.jpg')
+Image('Images/Basel_Problem.jpg')
 
+
+# ### Item1.3: Euler Product Formula
+# 
+# https://en.wikipedia.org/wiki/Proof_of_the_Euler_product_formula_for_the_Riemann_zeta_function
+# 
+# Leonhard Euler proved the Euler product formula for the Riemann zeta function in his thesis Variae observationes circa series infinitas (Various Observations about Infinite Series), published by St Petersburg Academy in 1737.[1][2]
+# 
 
 # In[3]:
 
@@ -70,7 +92,22 @@ Image('Images/EulerProduct.jpg')
 # Many consider it to be the most important unsolved problem in pure mathematics.[1] It is of great interest in number theory because it implies results about the distribution of prime numbers. It was proposed by Bernhard Riemann (1859), after whom it is named.
 # The Riemann hypothesis and some of its generalizations, along with Goldbach's conjecture and the twin prime conjecture, comprise Hilbert's eighth problem in David Hilbert's list of 23 unsolved problems; it is also one of the Clay Mathematics Institute's Millennium Prize Problems. The name is also used for some closely related analogues, such as the Riemann hypothesis for curves over finite fields.  
 
+# ### Item2.1: Zero-free region of Zeta-Function
+# 
+# Apart from the trivial zeros, the Riemann zeta function has no zeros to the right of σ = 1 and to the left of σ = 0 
+# (neither can the zeros lie too close to those lines). Furthermore, the non-trivial zeros are symmetric about the 
+# real axis and the line σ = 1/2 and, according to the Riemann hypothesis, they all lie on the line σ = 1/2.
+
 # In[4]:
+
+
+print ("*** Zero-free_region_for_the_Riemann_zeta-function**** ")
+from IPython.display import Image
+
+Image('Images/Zero-free_region_for_the_Riemann_zeta-function.jpg')
+
+
+# In[5]:
 
 
 print (" ************************************************************** ")
@@ -84,7 +121,7 @@ from IPython.display import Image
 Image('Images/riemann-zeta1.jpg')
 
 
-# In[5]:
+# In[6]:
 
 
 print ("*** Here is the example of a plot of the zeta function in more detail***") 
@@ -96,7 +133,7 @@ from IPython.display import Image
 Image('Images/riemann-zeta2.jpg')
 
 
-# In[6]:
+# In[7]:
 
 
 # Program/Source Code
@@ -113,7 +150,7 @@ def zeta(s, t = 100):
     return sum(islice(term, t)) / (1 - 2 ** (1- s)) 
 
 
-# In[7]:
+# In[8]:
 
 
 # Import libaries
@@ -122,7 +159,12 @@ from itertools import count, islice
 from scipy.special import binom
 
 
-# In[8]:
+# ### Item2.2: List of Special values of Zeta-Fct.
+# 
+# We calcualate here some special values of the Riemann Zeta function Zeta(s), where s is a complex number, with Im(s)=0. So we list up the values of Zeta(s) with s = {-2, -1, 0, 1, 2, 3, 4}.
+# For s=2 we see the famous Basel-problem (see Item1.2 above) 
+
+# In[9]:
 
 
 print ("************************************")
@@ -164,7 +206,12 @@ print ("7. zeta(4)=((pi²))²/90 ~ 1,082323...:")
 print ("zeta(4) =",zeta(4))
 
 
-# In[9]:
+# ### Item2.3: List of special trival zeros of Zeta-Fct.
+# 
+# We calcualate here some special values with trival zeros of the Riemann Zeta function Zeta(s), where s is a complex number,
+# with Im(s)=0. So we list up the values of Zeta(s) with s = {-8, -6, -4, -2}.
+
+# In[10]:
 
 
 print("***********************************************")
@@ -190,7 +237,7 @@ print ("4. check zeta(-8)=0:")
 print ("zeta(-8) =",zeta(-8))
 
 
-# In[10]:
+# In[11]:
 
 
 import time

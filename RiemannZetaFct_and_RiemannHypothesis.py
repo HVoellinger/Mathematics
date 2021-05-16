@@ -206,12 +206,26 @@ print ("7. zeta(4)=((pi²))²/90 ~ 1,082323...:")
 print ("zeta(4) =",zeta(4))
 
 
-# ### Item2.3: List of special trival zeros of Zeta-Fct.
+# ### Item2.3: Riem. Funct. Equation &  trival zeros of Zeta-Fct
 # 
 # We calcualate here some special values with trival zeros of the Riemann Zeta function Zeta(s), where s is a complex number,
 # with Im(s)=0. So we list up the values of Zeta(s) with s = {-8, -6, -4, -2}.
+# 
+# The zeta function satisfies the 'Riemann's Functional Equation" - see image below:
+# 
+# This is an equality of meromorphic functions valid on the whole complex plane. The equation relates values of the Riemann zeta function at the points s and 1 − s, in particular relating even positive integers with odd negative integers. Owing to the zeros of the sine function, the functional equation implies that ζ(s) has a simple zero at each even negative integer's = −2n, known as the trivial zeros of Zeta(s). When s is an even positive integer, the product sin(πs/2)*Γ(1 − s) on the right is non-zero because Γ(1 − s) has a simple pole, which cancels the simple zero of the sine factor.
 
 # In[10]:
+
+
+print ("**** The zeta function satisfies the 'Riemann's Functional Equation ****")
+
+from IPython.display import Image
+
+Image('Images/Riemann_functional_equation.JPG')
+
+
+# In[11]:
 
 
 print("***********************************************")
@@ -237,7 +251,7 @@ print ("4. check zeta(-8)=0:")
 print ("zeta(-8) =",zeta(-8))
 
 
-# In[11]:
+# In[12]:
 
 
 import time

@@ -32,8 +32,12 @@
 # In[1]:
 
 
-print ("*** Euler-Formula of Riemann Zeta-Fuction**** ")
+print ("*** DirichletForm of the Riemann Zeta-Fuction (Euler**** ")
 print ("*** LATEX syntax of zeta-fct for re(z)>1: '$ displaystyle \\zeta(s)=\sum_{n=1}^\infty 1/n^s $' ***")
+
+from IPython.display import Image
+
+Image('Images/DirichletForm4Riem-ZetaFct.jpg')
 
 
 # In[2]:

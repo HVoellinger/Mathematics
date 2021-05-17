@@ -34,13 +34,15 @@
 # 
 # https://en.wikipedia.org/wiki/Dirichlet_series
 # In mathematics, a Dirichlet series is any series of the form of the following picture (see below).  
-# The Dirichlet series of Riemann's Zeta-Function is a complex sequence. It is a special case of general Dirichlet series. Dirichlet series play a variety of important roles in analytic number theory. The most usually seen definition of the Riemann zeta function is a Dirichlet series, as are the Dirichlet L-functions
+# The Dirichlet series of Riemann's Zeta-Function is a complex sequence. It is a special case of general Dirichlet series. 
+# Dirichlet series play a variety of important roles in analytic number theory. The most usually seen definition of the 
+# Riemann zeta function is a Dirichlet series, as are the Dirichlet L-functions.
 
 # In[1]:
 
 
-print("*** DirichletForm of the Riemann Zeta-Fuction (Euler-Function)****") 
-# print("*** LATEX syntax of zeta-fct for re(z)>1: '$ displaystyle \zeta(s)=\sum_{n=1}^\infty 1/n^s $' ***")
+print("** DirichletForm of the Riemann Zeta-Fuction (Euler-Function)**") 
+#print("** LATEX syntax zeta(s) for re(s)>1: $ \zeta(s)=\sum_{n=1}^\infty 1/n^s $ **")
 from IPython.display import Image
 
 Image('Images/DirichletForm4Riem-ZetaFct.jpg')
@@ -56,8 +58,8 @@ Image('Images/DirichletForm4Riem-ZetaFct.jpg')
 # In[2]:
 
 
-print("*** Consider the special case s = 2 + i*0 so we get the follw. series: ***")
-print("*** This is the famous 'Basel-Problem' solved by L. Euler in 1735 *******")
+print("Consider the special case s = 2 + i*0, so we get the follw. series:")
+print("** This is the famous 'Basel-Problem' solved by L. Euler in 1735 **")
 
 from IPython.display import Image
 
@@ -74,10 +76,10 @@ Image('Images/Basel_Problem.jpg')
 # In[3]:
 
 
-print ("************************************************************************")
-print ("****** The bridge between zeta-fct in 'Complex Analysis' and prim- *****") 
-print ("****** numbers in 'Number Theory' is given by EulerProduct formula *****")
-print ("************************************************************************")
+print ("*****************************************************************")
+print ("** The bridge between zeta-fct in 'Complex Analysis' and prim- **") 
+print ("** numbers in 'Number Theory' is given by EulerProduct formula **")
+print ("*****************************************************************")
 
 from IPython.display import Image
 
@@ -110,11 +112,11 @@ Image('Images/Zero-free_region_for_the_Riemann_zeta-function.jpg')
 # In[5]:
 
 
-print (" ************************************************************** ")
-print (" **** Here is an example-plot of the riemann zeta-function **** ") 
-print (" **** See non-trival zeros at 'critical' line real(z)=0.5 ***** ")
-print (" **** This is a visualization of the Riemann-Hypothesis ******* ")  
-print (" ************************************************************** ")
+print (" ************************************************************ ")
+print (" *** Here is an example-plot of the riemann zeta-function *** ") 
+print (" **** See non-trival zeros at 'critical' line real(z)=0.5 *** ")
+print (" **** This is a visualization of the Riemann-Hypothesis ***** ")  
+print (" ************************************************************ ")
 
 from IPython.display import Image
 
@@ -124,9 +126,10 @@ Image('Images/riemann-zeta1.jpg')
 # In[6]:
 
 
-print ("*** Here is the example of a plot of the zeta function in more detail***") 
-print ("*** See two zeros at at the points z=0.5 + 14,12...z=0.5-14,12...***")
-print ("*********************************************************************")
+print ("*************************************************************")
+print ("** Here is an example-plot of zeta function in more detail **") 
+print ("** See two zeros at the points z=0.5 + 14,12 & z=0.5-14,12 **")
+print ("*************************************************************")
 
 from IPython.display import Image
 
@@ -159,51 +162,101 @@ from itertools import count, islice
 from scipy.special import binom
 
 
-# ### Item2.2: List of Special values of Zeta-Fct.
+# ### Item2.2: Calulate Zeta(s) for s=integer.
 # 
-# We calcualate here some special values of the Riemann Zeta function Zeta(s), where s is a complex number, with Im(s)=0. So we list up the values of Zeta(s) with s = {-2, -1, 0, 1, 2, 3, 4}.
+# We calcualate here some special values of the Riemann Zeta function Zeta(s), where s is a complex number, with Im(s)=0 and s is an integer. So we list up the values of Zeta(s) with s = {-2, -1, 0, 1, 2, 3, 4, 6, 8}.
 # For s=2 we see the famous Basel-problem (see Item1.2 above) 
+# 
+# For real(s)>1: when calculate for s=natural numbers greater2; i.e. s is from the number set S={2,3,4,5,6,7,8....).
+# We see lim(Zeta(s))=1 when s goes in the direction of infinity.
+# 
+# For s=2k (k=1,2,3,...), we see can define the values of Zeta(2k) with Bernoulli numbers Bk...
+# See Bronstein, page 254, Formula '19.' (red box). 
 
 # In[9]:
 
 
-print ("************************************")
-print ("*** List of zeta-function values ***")
-print ("************************************")
+print ("*** Bernoulli Numbers Bk ***")
+
+from IPython.display import Image
+
+Image('Images/bernoulli_numbers.jpg')         
+
+
+# In[10]:
+
+
+print ("******************************************")
+print ("*** examples: Zeta(s) for s = integers ***")
+print ("******************************************")
 
 # 1. zeta(-2)=0
 print ("1. check zeta(-2)= 0:")
 print ("zeta(-2) =",zeta(-2))
 
 # 2. zeta(-1)=-1/12=-0,08333...
-print ("************************************")
+print ("****************************************")
 print ("2. check zeta(-1)=-1/12=-0,08333...:")
 print ("zeta(-1) =",zeta(-1))
 
 # 3. zeta(0)=-1/2
-print ("************************************")
+print ("****************************************")
 print ("3. check zeta(0)=-1/2:")
 print ("zeta(0) =",zeta(0))
 
-# 4. zeta(1)=unendlich
-print ("************************************")
+# 4. zeta(1)=inifinity
+print ("****************************************")
 print ("4. check zeta(1)=unendlich(inf):")
 print ("zeta(1) =",zeta(1))
 
-# 5. zeta(2)=pi²/6=1,64493...
-print ("************************************")
+# 5. zeta(2)=pi²/6 Bernoulli formula,k=1
+print ("*****************************************")
+print ("zeta(2)=pi²/6 see Bernoulli formula,k=1")
 print ("5. check zeta(2)=pi²/6=1,644934...:")
 print ("zeta(2) =",zeta(2))
 
 # 6. zeta(3)=1,2020...
-print ("************************************")
+print ("*******************************************")
 print ("6. check zeta(3)= 1,202056...:")
 print ("zeta(3) =",zeta(3))
 
-# 7. zeta(4)=(pi²)²/90
-print ("************************************")
-print ("7. zeta(4)=((pi²))²/90 ~ 1,082323...:")
+# 7. zeta(4)=(pi²)²/90 Bernoulli formula,k=2
+print ("*******************************************")
+print ("zeta(4)=(pi²)²/90 Bernoulli formula,k=2")
+print ("7. zeta(4)=((pi²))²/90 = 1,082323...:")
 print ("zeta(4) =",zeta(4))
+
+# 8. zeta(5)=1,0369277...
+print ("*******************************************")
+print ("8. zeta(5)=1,0369277...:")
+print ("zeta(5) =",zeta(5))
+
+# 9. zeta(6)=(pi²)³/945 Bernoulli formula,k=3
+print ("********************************************")
+print ("zeta(6)=(pi²)³/945 Bernoulli formula,k=3")
+print ("9. zeta(6)=(pi²)³/945=1,017343...:")
+print ("zeta(6) =",zeta(6))
+
+# 10. zeta(7)=1,008349...
+print ("********************************************")
+print ("10. zeta(7)=1,008349...:")
+print ("zeta(7) =",zeta(7))
+
+# 11. zeta(8)=(pi²)²)²/9450 Bernoulli formula,k=4
+print ("********************************************")
+print ("zeta(4)=((pi²)²)²/9450 Bernoulli formula,k=4")
+print ("12. zeta(8)=1,0040773..:")
+print ("zeta(8) =",zeta(8))
+
+# 12. zeta(s) for s=50,100,201,500, 1201
+print ("********************************************")
+print ("*** check value s = 50,100,201,500,1201: ***")
+print ("********************************************")
+print ("zeta(50) =",zeta(50))
+print ("zeta(100) =",zeta(100))
+print ("zeta(201) =",zeta(201))
+print ("zeta(500) =",zeta(500))
+print ("zeta(1201) =",zeta(1201))
 
 
 # ### Item2.3: Riem. Funct. Equation &  trival zeros of Zeta-Fct
@@ -215,17 +268,17 @@ print ("zeta(4) =",zeta(4))
 # 
 # This is an equality of meromorphic functions valid on the whole complex plane. The equation relates values of the Riemann zeta function at the points s and 1 − s, in particular relating even positive integers with odd negative integers. Owing to the zeros of the sine function, the functional equation implies that ζ(s) has a simple zero at each even negative integer's = −2n, known as the trivial zeros of Zeta(s). When s is an even positive integer, the product sin(πs/2)*Γ(1 − s) on the right is non-zero because Γ(1 − s) has a simple pole, which cancels the simple zero of the sine factor.
 
-# In[10]:
+# In[11]:
 
 
-print ("**** The zeta function satisfies the 'Riemann's Functional Equation ****")
+print ("*** The zeta function satisfies the 'Riemann's Functional Equation' ***")
 
 from IPython.display import Image
 
 Image('Images/Riemann_functional_equation.JPG')
 
 
-# In[11]:
+# In[12]:
 
 
 print("***********************************************")
@@ -251,7 +304,7 @@ print ("4. check zeta(-8)=0:")
 print ("zeta(-8) =",zeta(-8))
 
 
-# In[12]:
+# In[13]:
 
 
 import time

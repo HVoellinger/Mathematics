@@ -167,7 +167,7 @@ from scipy.special import binom
 # We calcualate here some special values of the Riemann Zeta function Zeta(s), where s is a complex number, with Im(s)=0 and s is an integer. So we list up the values of Zeta(s) with s = {-2, -1, 0, 1, 2, 3, 4, 6, 8}.
 # For s=2 we see the famous Basel-problem (see Item1.2 above) 
 # 
-# For real(s)>1: when calculate for s=natural numbers greater2; i.e. s is from the number set S={2,3,4,5,6,7,8....).
+# For real(s)>1: when calculate for s=natural numbers greater 2; i.e. s is from the number set S={2,3,4,5,6,7,8....).
 # We see lim(Zeta(s))=1 when s goes in the direction of infinity.
 # 
 # For s=2k (k=1,2,3,...), we see can define the values of Zeta(2k) with Bernoulli numbers Bk...
@@ -249,9 +249,10 @@ print ("12. zeta(8)=1,0040773..:")
 print ("zeta(8) =",zeta(8))
 
 # 12. zeta(s) for s=50,100,201,500, 1201
-print ("********************************************")
-print ("*** check value s = 50,100,201,500,1201: ***")
-print ("********************************************")
+print ("****************************************************")
+print ("*** calc. zeta(s) for s = 50,100,201,500,1201 to ***")
+print ("*** check [lim(s->inf)](zeta(s)=1 for s=number>1 ***")
+print ("****************************************************")
 print ("zeta(50) =",zeta(50))
 print ("zeta(100) =",zeta(100))
 print ("zeta(201) =",zeta(201))
@@ -259,19 +260,20 @@ print ("zeta(500) =",zeta(500))
 print ("zeta(1201) =",zeta(1201))
 
 
-# ### Item2.3: Riem. Funct. Equation &  trival zeros of Zeta-Fct
+# ### Item2.3: Riem. Funct. Equation (RFE) & Trivial zeros of Zeta-Fct
 # 
 # We calcualate here some special values with trival zeros of the Riemann Zeta function Zeta(s), where s is a complex number,
 # with Im(s)=0. So we list up the values of Zeta(s) with s = {-8, -6, -4, -2}.
+# In addition we calculate also some zeta(s) where s is a fracture number. 
 # 
-# The zeta function satisfies the 'Riemann's Functional Equation" - see image below:
+# The zeta function satisfies the 'Riemann's Functional Equation (RFE)' - see image below:
 # 
-# This is an equality of meromorphic functions valid on the whole complex plane. The equation relates values of the Riemann zeta function at the points s and 1 − s, in particular relating even positive integers with odd negative integers. Owing to the zeros of the sine function, the functional equation implies that ζ(s) has a simple zero at each even negative integer's = −2n, known as the trivial zeros of Zeta(s). When s is an even positive integer, the product sin(πs/2)*Γ(1 − s) on the right is non-zero because Γ(1 − s) has a simple pole, which cancels the simple zero of the sine factor.
+# This is an equality of meromorphic functions valid on the whole complex plane. The equation relates values of the Riemann zeta function at the points s and 1 − s, in particular relating even positive integers with odd negative integers. Owing to the zeros of the sine function, the functional equation implies that zeta(s) has a simple zero at each even negative integer's = −2n, known as the trivial zeros of zeta(s). When s is an even positive integer, the product sin(pi*s/2)*gamma(1 − s) on the right is non-zero because gamma(1 − s) has a simple pole, which cancels the simple zero of the sine factor.
 
 # In[11]:
 
 
-print ("*** The zeta function satisfies the 'Riemann's Functional Equation' ***")
+print ("** The zeta func. satisfies the 'Riemann's Functional Equation (RFE)' **")
 
 from IPython.display import Image
 
@@ -281,30 +283,50 @@ Image('Images/Riemann_functional_equation.JPG')
 # In[12]:
 
 
-print("***********************************************")
-print("** 'Trival' zeros are for z=-2,-4,-6,-8,etc. **")
-print("***********************************************")
+print("************************************************")
+print("** 'Trivial' zeros are for z=-2,-4,-6,-8,etc. **")
+print("************************************************")
 # 1. zeta(-2)=0
 print ("1. check zeta(-2)=0:")
 print ("zeta(-2) =",zeta(-2))
 
 # 2. zeta(-4)=0
-print ("************************************")
+print ("***************************************")
 print ("2. check zeta(-4)=0:")
 print ("zeta(-4) =",zeta(-4))
 
 # 3. zeta(-6)=0
-print ("************************************")
+print ("**************************************")
 print ("3. check zeta(-6)=0:")
 print ("zeta(-6) =",zeta(-6))
 
 # 4. zeta(-8)=0
-print ("************************************")
+print ("**************************************")
 print ("4. check zeta(-8)=0:")
 print ("zeta(-8) =",zeta(-8))
 
 
 # In[13]:
+
+
+# Calculate zeta(s) for fracture numbers s=-3/2,-1/2, 1/2; 3/2; 5/2
+print ("*****************************************************")
+print ("*** check values for s =-3/2, -1/2, 1/2, 3/2, 5/2 ***")
+print ("**** by using Riemann's Function Equation (RFE) *****")
+print ("*****************************************************")
+print ("with RFE follows zeta(-3/2)=(-3/16)*(1/pi²)*zeta(5/2)")
+print ("using zeta(5/2),see below,the correct result is found")
+print ("zeta(-3/2) =",zeta(-3/2))
+print ("with RFE we see that zeta(-1/2)=(-1/4)*(1/pi)*zeta(3/2)")
+print ("using zeta(3/2), see below, the correct result is found")
+print ("zeta(-1/2) =",zeta(-1/2))
+print ("RFE=> zeta(1/2)=(2/2)*root((pi/pi))*zeta(1/2) is correct")
+print ("zeta(1/2) =",zeta(1/2))
+print ("zeta(3/2) =",zeta(3/2))
+print ("zeta(5/2) =",zeta(5/2))
+
+
+# In[14]:
 
 
 import time

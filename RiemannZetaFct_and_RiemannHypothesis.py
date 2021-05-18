@@ -168,7 +168,7 @@ from scipy.special import binom
 # For s=2 we see the famous Basel-problem (see Item1.2 above) 
 # 
 # For real(s)>1: when calculate for s=natural numbers greater 2; i.e. s is from the number set S={2,3,4,5,6,7,8....).
-# We see lim(Zeta(s))=1 when s goes in the direction of infinity.
+# We see lim(Zeta(s))=1 when s goes in the direction of the positive infinity.
 # 
 # For s=2k (k=1,2,3,...), we see can define the values of Zeta(2k) with Bernoulli numbers Bk...
 # See Bronstein, page 254, Formula '19.' (red box). 
@@ -192,7 +192,7 @@ print ("******************************************")
 
 # 1. zeta(-2)=0
 print ("1. check zeta(-2)= 0:")
-print ("zeta(-2) =",zeta(-2))
+print ("zeta(-2) =",zeta(-3))
 
 # 2. zeta(-1)=-1/12=-0,08333...
 print ("****************************************")
@@ -244,14 +244,14 @@ print ("zeta(7) =",zeta(7))
 
 # 11. zeta(8)=(pi²)²)²/9450 Bernoulli formula,k=4
 print ("********************************************")
-print ("zeta(4)=((pi²)²)²/9450 Bernoulli formula,k=4")
+print ("zeta(8)=((pi²)²)²/9450 Bernoulli formula,k=4")
 print ("12. zeta(8)=1,0040773..:")
 print ("zeta(8) =",zeta(8))
 
 # 12. zeta(s) for s=50,100,201,500, 1201
 print ("****************************************************")
 print ("*** calc. zeta(s) for s = 50,100,201,500,1201 to ***")
-print ("*** check [lim(s->inf)](zeta(s)=1 for s=number>1 ***")
+print ("** check [lim(s->+inf)](zeta(s))=1 for s=number>1 **")
 print ("****************************************************")
 print ("zeta(50) =",zeta(50))
 print ("zeta(100) =",zeta(100))
@@ -264,11 +264,16 @@ print ("zeta(1201) =",zeta(1201))
 # 
 # We calcualate here some special values with trival zeros of the Riemann Zeta function Zeta(s), where s is a complex number,
 # with Im(s)=0. So we list up the values of Zeta(s) with s = {-8, -6, -4, -2}.
-# In addition we calculate also some zeta(s) where s is a fracture number. 
+# In addition we calculate also some Zeta(s) where s is a fracture number. 
 # 
 # The zeta function satisfies the 'Riemann's Functional Equation (RFE)' - see image below:
 # 
-# This is an equality of meromorphic functions valid on the whole complex plane. The equation relates values of the Riemann zeta function at the points s and 1 − s, in particular relating even positive integers with odd negative integers. Owing to the zeros of the sine function, the functional equation implies that zeta(s) has a simple zero at each even negative integer's = −2n, known as the trivial zeros of zeta(s). When s is an even positive integer, the product sin(pi*s/2)*gamma(1 − s) on the right is non-zero because gamma(1 − s) has a simple pole, which cancels the simple zero of the sine factor.
+# This is an equality of meromorphic functions valid on the whole complex plane. The equation relates values of the 
+# Riemann zeta function at the points s and 1 − s, in particular relating even positive integers with odd 
+# negative integers. Owing to the zeros of the sine function, the functional equation implies that zeta(s) has a 
+# simple zero at each even negative integers = −2n, known as the trivial zeros of zeta(s). When s is an even positive 
+# integer, the product sine(pi*s/2)* gamma(1 − s) on the right is non-zero because gamma(1 − s) has a simple pole, 
+# which cancels the simple zero of the sine factor.
 
 # In[11]:
 
@@ -309,9 +314,9 @@ print ("zeta(-8) =",zeta(-8))
 # In[13]:
 
 
-# Calculate zeta(s) for fracture numbers s=-3/2,-1/2, 1/2; 3/2; 5/2
+# Calculate zeta(s) for fracture numbers s=-3/2,-1/2,1/2,...15/2
 print ("*****************************************************")
-print ("*** check values for s =-3/2, -1/2, 1/2, 3/2, 5/2 ***")
+print ("*** check values for s =-3/2, -1/2, 1/2, ... 15/2 ***")
 print ("**** by using Riemann's Function Equation (RFE) *****")
 print ("*****************************************************")
 print ("with RFE follows zeta(-3/2)=(-3/16)*(1/pi²)*zeta(5/2)")
@@ -320,13 +325,36 @@ print ("zeta(-3/2) =",zeta(-3/2))
 print ("with RFE we see that zeta(-1/2)=(-1/4)*(1/pi)*zeta(3/2)")
 print ("using zeta(3/2), see below, the correct result is found")
 print ("zeta(-1/2) =",zeta(-1/2))
-print ("RFE=> zeta(1/2)=(2/2)*root((pi/pi))*zeta(1/2) is correct")
+print ("RFE=> zeta(1/2)=(2/2)*root((pi/pi))*zeta(1/2) is correct!")
 print ("zeta(1/2) =",zeta(1/2))
 print ("zeta(3/2) =",zeta(3/2))
 print ("zeta(5/2) =",zeta(5/2))
+print ("zeta(7/2) =",zeta(7/2))
+print ("zeta(9/2) =",zeta(9/2))
+print ("zeta(11/2) =",zeta(11/2))
+print ("zeta(13/2) =",zeta(13/2))
+print ("zeta(15/2) =",zeta(15/2))
 
+
+# ### Item2.4: Summary of Results: Graph of Riem. Zeta(s) Fct. with Im(s)=0 
+# 
+# As a summary and final result of the above work we show the graph of zeta(s) where Im(s)=0, s.t. s=real mumber 
+# (without s=1). 
+# We us the calculated values zeta(s) for this special s and summaries them in a small table (see below).
+# we see a pole of zeta(s) at s=1 and an asymtote at f(s)=1 for s>1. Compare also the remarks about the lim(zeta(s)) 
+# for s goes to positive infinity: lim(s->+inf)](zeta(s))=1.
 
 # In[14]:
+
+
+print ("** Values and Graph of Riem. Zeta(s) Fct. with Im(s)=0 **")
+
+from IPython.display import Image
+
+Image('Images/Graph_Zeta(s)_Im(s)=0.JPG')
+
+
+# In[15]:
 
 
 import time

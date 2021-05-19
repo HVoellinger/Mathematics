@@ -168,7 +168,7 @@ from scipy.special import binom
 # For s=2 we see the famous Basel-problem (see Item1.2 above) 
 # 
 # For real(s)>1: when calculate for s=natural numbers greater 2; i.e. s is from the number set S={2,3,4,5,6,7,8....).
-# We see lim(Zeta(s))=1 when s goes in the direction of the positive infinity.
+# We see lim(Zeta(s))=1 when s goes in the direction of infinity.
 # 
 # For s=2k (k=1,2,3,...), we see can define the values of Zeta(2k) with Bernoulli numbers Bk...
 # See Bronstein, page 254, Formula '19.' (red box). 
@@ -190,69 +190,75 @@ print ("******************************************")
 print ("*** examples: Zeta(s) for s = integers ***")
 print ("******************************************")
 
-# 1. zeta(-2)=0
-print ("1. check zeta(-2)= 0:")
-print ("zeta(-2) =",zeta(-3))
+# 1. zeta(s)=0 for s=-7,-5,-3
+print ("1. check zeta(s) for s=-7, -5, -3:")
+print ("zeta(-7) =",zeta(-7))
+print ("zeta(-5) =",zeta(-5))
+print ("zeta(-3) =",zeta(-3))
 
-# 2. zeta(-1)=-1/12=-0,08333...
+# 2. zeta(-2)=0
+print ("2. check zeta(-2)= 0:")
+print ("zeta(-2) =",zeta(-2))
+
+# 3. zeta(-1)=-1/12=-0,08333...
 print ("****************************************")
-print ("2. check zeta(-1)=-1/12=-0,08333...:")
+print ("3. check zeta(-1)=-1/12=-0,08333...:")
 print ("zeta(-1) =",zeta(-1))
 
-# 3. zeta(0)=-1/2
+# 4. zeta(0)=-1/2
 print ("****************************************")
-print ("3. check zeta(0)=-1/2:")
+print ("4. check zeta(0)=-1/2:")
 print ("zeta(0) =",zeta(0))
 
-# 4. zeta(1)=inifinity
+# 5. zeta(1)=inifinity
 print ("****************************************")
-print ("4. check zeta(1)=unendlich(inf):")
+print ("5. check zeta(1)=unendlich(inf):")
 print ("zeta(1) =",zeta(1))
 
-# 5. zeta(2)=pi²/6 Bernoulli formula,k=1
+# 6. zeta(2)=pi²/6 Bernoulli formula,k=1
 print ("*****************************************")
 print ("zeta(2)=pi²/6 see Bernoulli formula,k=1")
-print ("5. check zeta(2)=pi²/6=1,644934...:")
+print ("6. check zeta(2)=pi²/6=1,644934...:")
 print ("zeta(2) =",zeta(2))
 
-# 6. zeta(3)=1,2020...
+# 7. zeta(3)=1,2020...
 print ("*******************************************")
-print ("6. check zeta(3)= 1,202056...:")
+print ("7. check zeta(3)= 1,202056...:")
 print ("zeta(3) =",zeta(3))
 
-# 7. zeta(4)=(pi²)²/90 Bernoulli formula,k=2
+# 8. zeta(4)=(pi²)²/90 Bernoulli formula,k=2
 print ("*******************************************")
 print ("zeta(4)=(pi²)²/90 Bernoulli formula,k=2")
-print ("7. zeta(4)=((pi²))²/90 = 1,082323...:")
+print ("8. zeta(4)=((pi²))²/90 = 1,082323...:")
 print ("zeta(4) =",zeta(4))
 
-# 8. zeta(5)=1,0369277...
+# 9. zeta(5)=1,0369277...
 print ("*******************************************")
-print ("8. zeta(5)=1,0369277...:")
+print ("9. zeta(5)=1,0369277...:")
 print ("zeta(5) =",zeta(5))
 
-# 9. zeta(6)=(pi²)³/945 Bernoulli formula,k=3
+# 10. zeta(6)=(pi²)³/945 Bernoulli formula,k=3
 print ("********************************************")
 print ("zeta(6)=(pi²)³/945 Bernoulli formula,k=3")
-print ("9. zeta(6)=(pi²)³/945=1,017343...:")
+print ("10. zeta(6)=(pi²)³/945=1,017343...:")
 print ("zeta(6) =",zeta(6))
 
-# 10. zeta(7)=1,008349...
+# 11. zeta(7)=1,008349...
 print ("********************************************")
-print ("10. zeta(7)=1,008349...:")
+print ("11. zeta(7)=1,008349...:")
 print ("zeta(7) =",zeta(7))
 
-# 11. zeta(8)=(pi²)²)²/9450 Bernoulli formula,k=4
+# 12. zeta(8)=(pi²)²)²/9450 Bernoulli formula,k=4
 print ("********************************************")
 print ("zeta(8)=((pi²)²)²/9450 Bernoulli formula,k=4")
 print ("12. zeta(8)=1,0040773..:")
 print ("zeta(8) =",zeta(8))
 
-# 12. zeta(s) for s=50,100,201,500, 1201
-print ("****************************************************")
-print ("*** calc. zeta(s) for s = 50,100,201,500,1201 to ***")
-print ("** check [lim(s->+inf)](zeta(s))=1 for s=number>1 **")
-print ("****************************************************")
+# 13. zeta(s) for s=50,100,201,500, 1201
+print ("********************************************************")
+print ("*** 13. calc. zeta(s) for s = 50,100,201,500,1201 to ***")
+print ("*** check [lim(s->inf)](zeta(s))=1 for s=number > 1 ****")
+print ("********************************************************")
 print ("zeta(50) =",zeta(50))
 print ("zeta(100) =",zeta(100))
 print ("zeta(201) =",zeta(201))
@@ -314,11 +320,18 @@ print ("zeta(-8) =",zeta(-8))
 # In[13]:
 
 
-# Calculate zeta(s) for fracture numbers s=-3/2,-1/2,1/2,...15/2
-print ("*****************************************************")
-print ("*** check values for s =-3/2, -1/2, 1/2, ... 15/2 ***")
-print ("**** by using Riemann's Function Equation (RFE) *****")
-print ("*****************************************************")
+# Calculate zeta(s) for fracture numbers s=-15/2,-13/2,...,15/2
+print ("**********************************************************")
+print ("**** calculate values for s = -15/2, -13/2, ..., 15/2 ****")
+print ("*** check the results for s = -3/2, -1/2 and 1/2 using ***")
+print ("*** the Riemann's Functional Equation (RFE); see above ***")
+print ("**********************************************************")
+print ("zeta(-15/2) =",zeta(-15/2))
+print ("zeta(-13/2) =",zeta(-13/2))
+print ("zeta(-11/2) =",zeta(-11/2))
+print ("zeta(-9/2) =",zeta(-9/2))
+print ("zeta(-7/2) =",zeta(-7/2))
+print ("zeta(-5/2) =",zeta(-5/2))
 print ("with RFE follows zeta(-3/2)=(-3/16)*(1/pi²)*zeta(5/2)")
 print ("using zeta(5/2),see below,the correct result is found")
 print ("zeta(-3/2) =",zeta(-3/2))
@@ -336,25 +349,34 @@ print ("zeta(13/2) =",zeta(13/2))
 print ("zeta(15/2) =",zeta(15/2))
 
 
-# ### Item2.4: Summary of Results: Graph of Riem. Zeta(s) Fct. with Im(s)=0 
+# ### Item2.4: Summary of Results: Values+Graph of Riem. Zeta(s) Fct. with Im(s)=0
 # 
-# As a summary and final result of the above work we show the graph of zeta(s) where Im(s)=0, s.t. s=real mumber 
-# (without s=1). 
-# We us the calculated values zeta(s) for this special s and summaries them in a small table (see below).
-# we see a pole of zeta(s) at s=1 and an asymtote at f(s)=1 for s>1. Compare also the remarks about the lim(zeta(s)) 
-# for s goes to positive infinity: lim(s->+inf)](zeta(s))=1.
+# As a summary and final result of the above work we show the graph of zeta(s)where Im(s)=0, s.t. s=real mumber (without s=1). We use also the calculated values of zeta(s) from this Jupyter Notebook and summaries them in a small table (see below).
+# Remarks: We see a pole of zeta(s) at s=1 and an asymtote at f(s)=1 for s>1.
+# Compare also the remarks about the lim(zeta(s)) for s which goes to the positive
+# infinity: lim(s->+inf)=1.
 
 # In[14]:
 
 
-print ("** Values and Graph of Riem. Zeta(s) Fct. with Im(s)=0 **")
+print ("**** Value-Table of Riem. Zeta(s) Fct. with Im(s)=0 ****")
+
+from IPython.display import Image
+
+Image('Images/Value_Zeta(s)_Im(s)=0.JPG')
+
+
+# In[15]:
+
+
+print ("****** Graph of Riem. Zeta(s) Fct. with Im(s)=0 ******")
 
 from IPython.display import Image
 
 Image('Images/Graph_Zeta(s)_Im(s)=0.JPG')
 
 
-# In[15]:
+# In[16]:
 
 
 import time

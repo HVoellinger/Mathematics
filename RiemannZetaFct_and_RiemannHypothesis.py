@@ -266,7 +266,7 @@ print ("zeta(500) =",zeta(500))
 print ("zeta(1201) =",zeta(1201))
 
 
-# ### Item2.3: Riem. Funct. Equation (RFE) & Trivial zeros of Zeta-Fct
+# ### Item2.3: Riem. Fct. Equation (RFE) using Gamma-Fct. & Trivial zeros of Zeta-Fct
 # 
 # We calcualate here some special values with trival zeros of the Riemann Zeta function Zeta(s), where s is a complex number,
 # with Im(s)=0. So we list up the values of Zeta(s) with s = {-8, -6, -4, -2}.
@@ -284,14 +284,58 @@ print ("zeta(1201) =",zeta(1201))
 # In[11]:
 
 
-print ("** The zeta func. satisfies the 'Riemann's Functional Equation (RFE)' **")
+print ("**********************************************************************************")
+print ("*** The zeta func. zeta(s) satisfies the 'Riemann's Functional Equation (RFE)' ***")
+print ("**********************************************************************************")
 
 from IPython.display import Image
-
 Image('Images/Riemann_functional_equation.JPG')
 
 
 # In[12]:
+
+
+print ("**********************************************************************************")
+print ("***** 3-dimensional plot of the absolute value of the complex gamma function *****")
+print ("*** we also see the poles of gamma(z) where z=-n, n=1,2,3... (natural numbers) ***")
+print ("**********************************************************************************")
+
+from IPython.display import Image
+
+Image('Images/Plot-complex_gamma-fct.JPG')
+
+
+# In[13]:
+
+
+print("*******************************************************")
+print("** 'Calculate zeta(s) for s=-1,-3,-5,-7 by using RFE **")
+print("*******************************************************")
+# 1. zeta(-1)=-1/12
+print ("zeta(-1)=(1/2pi²)*sin(-pi/2)*gamma(2)*zeta(2)")  
+print ("        =(1/2pi²)*(-1)*1*(pi²/6)=-1/12       ")
+
+# 2. zeta(-3)=1/120
+print ("*************************************************")
+print ("zeta(-3)=(1/8(pi²)²)*sin(-3pi/2)*gamma(4)*zeta(4)")  
+print ("        =(1/8(pi²)²)*(+1)*3!*((pi²)²/90)=6/(8*90)")
+print ("        =6/720=1/120                             ")
+
+# 3. zeta(-5)=-1/252
+print ("**************************************************")
+print ("zeta(-5)=(1/32(pi²)³)*sin(-5pi/2)*gamma(6)*zeta(6)")  
+print ("        =(1/32(pi²)³)*(-1)*5!*((pi²)³/945)        ")
+print ("        =-120/(32*945)=-1/(4*63)=-1/252           ")
+
+# 4. zeta(-7)=1/240
+print ("******************************************************")
+print ("zeta(-7)=(1/128((pi²)²)²)*sin(-7pi/2)*gamma(8)*zeta(8)")  
+print ("        =(1/128((pi²)²)²)*(+1)*7!*(((pi²)²)²/9450)    ")
+print ("        =5040/(128*9450)=504/(128*945)=63/(16*945)    ")
+print ("        =1/(16*15)=1/240                              ")      
+
+
+# In[14]:
 
 
 print("************************************************")
@@ -317,7 +361,7 @@ print ("4. check zeta(-8)=0:")
 print ("zeta(-8) =",zeta(-8))
 
 
-# In[13]:
+# In[15]:
 
 
 # Calculate zeta(s) for fracture numbers s=-15/2,-13/2,...,15/2
@@ -356,7 +400,7 @@ print ("zeta(15/2) =",zeta(15/2))
 # Compare also the remarks about the lim(zeta(s)) for s which goes to the positive
 # infinity: lim(s->+inf)=1.
 
-# In[14]:
+# In[16]:
 
 
 print ("**** Value-Table of Riem. Zeta(s) Fct. with Im(s)=0 ****")
@@ -366,7 +410,7 @@ from IPython.display import Image
 Image('Images/Value_Zeta(s)_Im(s)=0.JPG')
 
 
-# In[15]:
+# In[17]:
 
 
 print ("****** Graph of Riem. Zeta(s) Fct. with Im(s)=0 ******")
@@ -376,7 +420,7 @@ from IPython.display import Image
 Image('Images/Graph_Zeta(s)_Im(s)=0.JPG')
 
 
-# In[16]:
+# In[18]:
 
 
 import time

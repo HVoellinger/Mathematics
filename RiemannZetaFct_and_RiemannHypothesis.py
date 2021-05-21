@@ -11,24 +11,22 @@
 # 
 # See: https://en.wikipedia.org/wiki/Riemann_zeta_function
 #     
-# or the following YouTube Video: https://www.youtube.com/watch?v=sZhl6PyTflw&vl=en  
+# For a non-expert introduction about the background and history of the Riemman's Zeta Fct & Riemann's Hypothesis (in German language, Christmas Lecture 2016 of HAW Hamburg) see the following YouTube video: https://www.youtube.com/watch?v=sZhl6PyTflw&vl=en  
 # 
-# The Riemann zeta function or Euler–Riemann zeta function, ζ(s), is a function of a complex variable s that analytically 
+# The Riemann zeta function or Euler–Riemann zeta function, zeta(s), is a function of a complex variable s that analytically 
 # continues the sum of the Dirichlet serie which converges when the real part of s is greater than 1. 
 # 
-# More general representations of ζ(s) for all s are given below. The Riemann zeta function plays a pivotal role in 
+# More general representations of zeta(s) for all s are given below. The Riemann zeta function plays a pivotal role in 
 # analytic number theory and has applications in physics, probability theory, and applied statistics.
 # As a function of a real variable, Leonhard Euler first introduced and studied it in the first half of the eighteenth century 
 # without using complex analysis, which was not available at the time. Bernhard Riemann's 1859 article "On the Number of 
 # Primes Less Than a Given Magnitude" extended the Euler definition to a complex variable, proved its meromorphic continuation 
 # and functional equation, and established a relation between its zeros and the distribution of prime numbers.[2]
 # 
-# The values of the Riemann zeta function at even positive integers were computed by Euler. The first of them, ζ(2), provides 
-# a solution to the Basel problem. In 1979 Roger Apéry proved the irrationality of ζ(3). The values at negative integer 
-# points, also found by Euler, are rational numbers and play an important role in the theory of modular forms. 
+# The values of the Riemann zeta function at even positive integers were computed by Euler. The first of them, zeta(2), provides a solution to the Basel problem. In 1979 Roger Apéry proved the irrationality of zeta(3). The values at negative integer points, also found by Euler, are rational numbers and play an important role in the theory of modular forms. 
 # Many generalizations of the Riemann zeta function, such as Dirichlet series, Dirichlet L-functions and L-functions, are known.
 #  
-# 
+# See also the following youtube video explaining in mathematical details of the Riemann's Zeta Fct. zetas(s), s = complex number and also the Riemann's Hypothesis: https://youtu.be/sD0NjbwqlYw
 
 # ### Item1.1: Dirichlet Series of Zeta-Function 
 # 
@@ -43,13 +41,14 @@
 
 print("** DirichletForm of the Riemann Zeta-Fuction (Euler-Function)**") 
 #print("** LATEX syntax zeta(s) for re(s)>1: $ \zeta(s)=\sum_{n=1}^\infty 1/n^s $ **")
+
 from IPython.display import Image
 
 Image('Images/DirichletForm4Riem-ZetaFct.jpg')
 
 
 # ### Item1.2: The Basel Problem
-# The basel problem is a problem in mathematical analysis with relevance to number theory, first posed by Pietro Mengoli in 1650 and solved by Leonhard Euler in 1734,[1] and read on 5 December 1735 in The Saint Petersburg Academy of Sciences.[2] Since the problem had withstood the attacks of the leading mathematicians of the day, Euler's solution brought him immediate fame when he was twenty-eight. Euler generalised the problem considerably, and his ideas were taken up years later by Bernhard Riemann in his seminal 1859 paper "On the Number of Primes Less Than a Given Magnitude", in which he defined his zeta function and proved its basic properties. The problem is named after Basel, hometown of Euler as well as of the Bernoulli family who unsuccessfully attacked the problem.
+# The Basel problem is a problem in mathematical analysis with relevance to number theory, first posed by Pietro Mengoli in 1650 and solved by Leonhard Euler in 1734,[1] and read on 5 December 1735 in The Saint Petersburg Academy of Sciences.[2] Since the problem had withstood the attacks of the leading mathematicians of the day, Euler's solution brought him immediate fame when he was twenty-eight. Euler generalised the problem considerably, and his ideas were taken up years later by Bernhard Riemann in his seminal 1859 paper "On the Number of Primes Less Than a Given Magnitude", in which he defined his zeta function and proved its basic properties. The problem is named after Basel, hometown of Euler as well as of the Bernoulli family who unsuccessfully attacked the problem.
 # 
 # The Basel problem asks for the precise summation of the reciprocals of the squares of the natural numbers, i.e. the precise sum of the infinite series:
 # 
@@ -66,14 +65,27 @@ from IPython.display import Image
 Image('Images/Basel_Problem.jpg')
 
 
-# ### Item1.3: Euler Product Formula
+# ### Item1.3: Riemann's Zeta Fct for Complex Numbers
+# If you extend the Dirichlet series on the whole complex plane, Riemann found a nice formula, which we call complex Riemann Zeta-Fct. (cRZ). The following picture show the formula.  
+
+# In[3]:
+
+
+print("** This is the famous cRZ formula from Berhard Riemann **")
+
+from IPython.display import Image
+
+Image('Images/complex_RiemannZeta-Formula.jpg')
+
+
+# ### Item1.4: Euler Product Formula
 # 
 # https://en.wikipedia.org/wiki/Proof_of_the_Euler_product_formula_for_the_Riemann_zeta_function
 # 
 # Leonhard Euler proved the Euler product formula for the Riemann zeta function in his thesis Variae observationes circa series infinitas (Various Observations about Infinite Series), published by St Petersburg Academy in 1737.[1][2]
 # 
 
-# In[3]:
+# In[4]:
 
 
 print ("*****************************************************************")
@@ -100,7 +112,7 @@ Image('Images/EulerProduct.jpg')
 # (neither can the zeros lie too close to those lines). Furthermore, the non-trivial zeros are symmetric about the 
 # real axis and the line σ = 1/2 and, according to the Riemann hypothesis, they all lie on the line σ = 1/2.
 
-# In[4]:
+# In[5]:
 
 
 print ("*** Zero-free_region_for_the_Riemann_zeta-function**** ")
@@ -109,7 +121,7 @@ from IPython.display import Image
 Image('Images/Zero-free_region_for_the_Riemann_zeta-function.jpg')
 
 
-# In[5]:
+# In[6]:
 
 
 print (" ************************************************************ ")
@@ -123,7 +135,7 @@ from IPython.display import Image
 Image('Images/riemann-zeta1.jpg')
 
 
-# In[6]:
+# In[7]:
 
 
 print ("*************************************************************")
@@ -136,12 +148,27 @@ from IPython.display import Image
 Image('Images/riemann-zeta2.jpg')
 
 
-# In[7]:
+# ### Item 2.2: Main Program Code for calculation of Zeta(s), s=complex number
+# 
+# This is the Program/Source Code (in Python) using complex the Riemann's Zeta-Fct (cRZ) for complex numbers (see above).
+# Rounding errors may occur when we are using the cRZ formula, because this is an approximation method for the determination 
+# of zeta(s). The parameter t is defining the granularity of the approximation. Choosing smaller t, i.e. t=50 the rounding error will become smaller.
+# The program will be executed later in the JN, when we calculate zeta(s), where s are special real numbers.
+# 
+
+# In[8]:
 
 
-# Program/Source Code
-# Here is the source code of a Python program to calculate the zeta function values 
-# The program output is shown below.
+# Import libaries
+
+from itertools import count, islice
+from scipy.special import binom
+
+# Program/Source Code (Python)using complex Riemann's Zeta-Fct (cRZ) for complex Numbers 
+# It is using the complex RiemannZeta formula (cRZ); see above
+
+print ("** Rounding errors may occur through the calculation of zeta(s,t) ***")
+print ("** Choosing a smaller value t,i.e. t=50 the error will get smaller **")
 
 def zeta(s, t = 100):
     if s == 1:
@@ -152,17 +179,26 @@ def zeta(s, t = 100):
            for n in count(0))
     return sum(islice(term, t)) / (1 - 2 ** (1- s)) 
 
-
-# In[8]:
-
-
-# Import libaries
-
-from itertools import count, islice
-from scipy.special import binom
+print ("** End of Definition of main function zeta(s,t) using formula (cRZ) **")
 
 
-# ### Item2.2: Calulate Zeta(s) for s=integer.
+# ### Item2.3: 3-dim. Plot of Riemann Zeta Fct. for complex plane
+# 
+# Lines in the complex plane where the Riemann zeta function is real (green) depicted on a relief representing the positive absolute value of zeta for arguments s, sigma and tau, where the real part of zeta is positive, and the negative absolute value of zeta where the real part of zeta is negative. 
+# This representation brings out most clearly that the lines of constant phase corresponding to phases of integer multiples of 2pi run down the hills on the left-hand side, turn around on the right and terminate in the non-trivial zeros.
+# This pattern repeats itself infinitely many times. The points of arrival and departure on the right-hand side of the picture are equally spaced and given by equation (cRZ).
+
+# In[9]:
+
+
+print ("*** 3-dim. Plot of Riemann Zeta Fct. for complex plane / Explanation see above ***")
+
+from IPython.display import Image
+
+Image('Images/Plot-complex_RiemannZeta-Fct.jpg') 
+
+
+# ### Item2.4: Calulate Zeta(s) for s=integer.
 # 
 # We calcualate here some special values of the Riemann Zeta function Zeta(s), where s is a complex number, with Im(s)=0 and s is an integer. So we list up the values of Zeta(s) with s = {-2, -1, 0, 1, 2, 3, 4, 6, 8}.
 # For s=2 we see the famous Basel-problem (see Item1.2 above) 
@@ -173,7 +209,7 @@ from scipy.special import binom
 # For s=2k (k=1,2,3,...), we see can define the values of Zeta(2k) with Bernoulli numbers Bk...
 # See Bronstein, page 254, Formula '19.' (red box). 
 
-# In[9]:
+# In[10]:
 
 
 print ("*** Bernoulli Numbers Bk ***")
@@ -183,7 +219,7 @@ from IPython.display import Image
 Image('Images/bernoulli_numbers.jpg')         
 
 
-# In[10]:
+# In[11]:
 
 
 print ("******************************************")
@@ -266,7 +302,7 @@ print ("zeta(500) =",zeta(500))
 print ("zeta(1201) =",zeta(1201))
 
 
-# ### Item2.3: Riem. Fct. Equation (RFE) using Gamma-Fct. & Trivial zeros of Zeta-Fct
+# ### Item2.5: Riem. Fct. Equation (RFE) using Gamma-Fct. & Trivial zeros of Zeta-Fct
 # 
 # We calcualate here some special values with trival zeros of the Riemann Zeta function Zeta(s), where s is a complex number,
 # with Im(s)=0. So we list up the values of Zeta(s) with s = {-8, -6, -4, -2}.
@@ -281,7 +317,7 @@ print ("zeta(1201) =",zeta(1201))
 # integer, the product sine(pi*s/2)* gamma(1 − s) on the right is non-zero because gamma(1 − s) has a simple pole, 
 # which cancels the simple zero of the sine factor.
 
-# In[11]:
+# In[12]:
 
 
 print ("**********************************************************************************")
@@ -292,7 +328,7 @@ from IPython.display import Image
 Image('Images/Riemann_functional_equation.JPG')
 
 
-# In[12]:
+# In[13]:
 
 
 print ("**********************************************************************************")
@@ -305,10 +341,10 @@ from IPython.display import Image
 Image('Images/Plot-complex_gamma-fct.JPG')
 
 
-# In[13]:
+# In[14]:
 
 
-print("*******************************************************")
+print("******************************************************")
 print("** 'Calculate zeta(s) for s=-1,-3,-5,-7 by using RFE **")
 print("*******************************************************")
 # 1. zeta(-1)=-1/12
@@ -335,7 +371,7 @@ print ("        =5040/(128*9450)=504/(128*945)=63/(16*945)    ")
 print ("        =1/(16*15)=1/240                              ")      
 
 
-# In[14]:
+# In[15]:
 
 
 print("************************************************")
@@ -355,13 +391,14 @@ print ("**************************************")
 print ("3. check zeta(-6)=0:")
 print ("zeta(-6) =",zeta(-6))
 
+
 # 4. zeta(-8)=0
 print ("**************************************")
 print ("4. check zeta(-8)=0:")
 print ("zeta(-8) =",zeta(-8))
 
 
-# In[15]:
+# In[16]:
 
 
 # Calculate zeta(s) for fracture numbers s=-15/2,-13/2,...,15/2
@@ -393,14 +430,14 @@ print ("zeta(13/2) =",zeta(13/2))
 print ("zeta(15/2) =",zeta(15/2))
 
 
-# ### Item2.4: Summary of Results: Values+Graph of Riem. Zeta(s) Fct. with Im(s)=0
+# ### Item2.6: Summary of Results: Values+Graph of Riem. Zeta(s) Fct. with Im(s)=0
 # 
 # As a summary and final result of the above work we show the graph of zeta(s)where Im(s)=0, s.t. s=real mumber (without s=1). We use also the calculated values of zeta(s) from this Jupyter Notebook and summaries them in a small table (see below).
 # Remarks: We see a pole of zeta(s) at s=1 and an asymtote at f(s)=1 for s>1.
 # Compare also the remarks about the lim(zeta(s)) for s which goes to the positive
 # infinity: lim(s->+inf)=1.
 
-# In[16]:
+# In[17]:
 
 
 print ("**** Value-Table of Riem. Zeta(s) Fct. with Im(s)=0 ****")
@@ -410,7 +447,7 @@ from IPython.display import Image
 Image('Images/Value_Zeta(s)_Im(s)=0.JPG')
 
 
-# In[17]:
+# In[18]:
 
 
 print ("****** Graph of Riem. Zeta(s) Fct. with Im(s)=0 ******")
@@ -420,7 +457,7 @@ from IPython.display import Image
 Image('Images/Graph_Zeta(s)_Im(s)=0.JPG')
 
 
-# In[18]:
+# In[19]:
 
 
 import time

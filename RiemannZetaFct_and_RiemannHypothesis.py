@@ -71,7 +71,7 @@ Image('Images/Basel_Problem.jpg')
 # In[3]:
 
 
-print("** This is the famous cRZ formula from Berhard Riemann **")
+print("******* This is the famous Riemann Zeta(s)-Fct. for complex numbers s *******")
 
 from IPython.display import Image
 
@@ -88,10 +88,10 @@ Image('Images/complex_RiemannZeta-Formula.jpg')
 # In[4]:
 
 
-print ("*****************************************************************")
-print ("** The bridge between zeta-fct in 'Complex Analysis' and prim- **") 
-print ("** numbers in 'Number Theory' is given by EulerProduct formula **")
-print ("*****************************************************************")
+print ("***********************************************************************************")
+print ("*** The bridge between Riemann Zeta-fct in 'Complex Analysis' and prime numbers ***") 
+print ("** in 'Number Theory' is given by the Euler Product, which Euler proofed in 1735 **")
+print ("***********************************************************************************")
 
 from IPython.display import Image
 
@@ -154,7 +154,16 @@ Image('Images/riemann-zeta2.jpg')
 # Rounding errors may occur when we are using the cRZ formula, because this is an approximation method for the determination 
 # of zeta(s). The parameter t is defining the granularity of the approximation. Choosing smaller t, i.e. t=50 the rounding error will become smaller.
 # The program will be executed later in the JN, when we calculate zeta(s), where s are special real numbers.
+# For definition of the main pgm, we import the libray itertools, which inlude functions creating iterators for efficient looping. 
 # 
+# We use the python library Intertools: it's creating complex iterators which helps in getting faster execution time and writing memory-efficient code. Itertools provide us with functions for creating infinite sequences and itertools. 
+# 
+# count() is a second such function and it does exactly what it sounds like, it counts!
+# 
+# itertools.islice(iterable, start, stop[, step]):Make an iterator that returns selected elements from the iterable. See also
+# https://docs.python.org/3/library/itertools.html#itertools.islice
+# 
+# scipy.special.binom(n,k) are the binomial coefficient n over k := n!/[(n-k)!k!]
 
 # In[8]:
 
@@ -169,7 +178,8 @@ from scipy.special import binom
 
 print ("** Rounding errors may occur through the calculation of zeta(s,t) ***")
 print ("** Choosing a smaller value t,i.e. t=50 the error will get smaller **")
-
+print ("** During testing we found the best results with t=10 (t=1 is worser **")
+     
 def zeta(s, t = 100):
     if s == 1:
         return float("inf")
@@ -200,11 +210,17 @@ Image('Images/Plot-complex_RiemannZeta-Fct.jpg')
 
 # ### Item2.4: Calulate Zeta(s) for s=integer.
 # 
-# We calcualate here some special values of the Riemann Zeta function Zeta(s), where s is a complex number, with Im(s)=0 and s is an integer. So we list up the values of Zeta(s) with s = {-2, -1, 0, 1, 2, 3, 4, 6, 8}.
-# For s=2 we see the famous Basel-problem (see Item1.2 above) 
+# We calcualate here some special values of the Riemann Zeta function Zeta(s), where s is a complex number, with Im(s)=0 
+# and s is an integer. So we list up the values of Zeta(s) with s = {-2, -1, 0, 1, 2, 3, 4, 6, 8}.
+# For s=2 we see the famous Basel-problem (see Item1.2 above).
 # 
-# For real(s)>1: when calculate for s=natural numbers greater 2; i.e. s is from the number set S={2,3,4,5,6,7,8....).
-# We see lim(Zeta(s))=1 when s goes in the direction of infinity.
+# We are using the pgm. defined above under the item: 'Main Program Code for calculation of Zeta(s), s=complex number'.
+# 
+# To crosscheck the results you can use for example the Wolfram Alpha program in the internet:https://www.wolframalpha.com/
+# 
+# For example zeta(7): https://www.wolframalpha.com/input/?i=zeta%28-7%29 or zeta(2): https://www.wolframalpha.com/input/?i=zeta%282%29
+#     
+# We will proof in the next steps, that lim(Zeta(s))=1 when s goes in the direction of infinity.
 # 
 # For s=2k (k=1,2,3,...), we see can define the values of Zeta(2k) with Bernoulli numbers Bk...
 # See Bronstein, page 254, Formula '19.' (red box). 
@@ -227,79 +243,85 @@ print ("*** examples: Zeta(s) for s = integers ***")
 print ("******************************************")
 
 # 1. zeta(s)=0 for s=-7,-5,-3
-print ("1. check zeta(s) for s=-7, -5, -3:")
+print ("*********** 1. check ************")
+print ("*** zeta(-7) = 0,00416666... ****")
 print ("zeta(-7) =",zeta(-7))
+print ("*** zeta(-5) = -0,00396825... ***")
 print ("zeta(-5) =",zeta(-5))
+print ("**** zeta(-3) = 0,00833333... ***")
 print ("zeta(-3) =",zeta(-3))
 
 # 2. zeta(-2)=0
-print ("2. check zeta(-2)= 0:")
+print ("*********** 2. check ************")
+print ("*** zeta(-2) = 0 ****************")
 print ("zeta(-2) =",zeta(-2))
 
-# 3. zeta(-1)=-1/12=-0,08333...
-print ("****************************************")
-print ("3. check zeta(-1)=-1/12=-0,08333...:")
+# 3. zeta(-1)=-1/12=-0,08333333...
+print ("************* 3. check *****************")
+print ("*** zeta(-1) = -1/12 = -0,08333333... **")
 print ("zeta(-1) =",zeta(-1))
 
 # 4. zeta(0)=-1/2
-print ("****************************************")
-print ("4. check zeta(0)=-1/2:")
+print ("************* 4. check *****************")
+print ("*** zeta(0) = -1/2 *********************")
 print ("zeta(0) =",zeta(0))
 
 # 5. zeta(1)=inifinity
-print ("****************************************")
-print ("5. check zeta(1)=unendlich(inf):")
+print ("************* 5. check *****************")
+print ("*** zeta(1)=unendlich(inf) *************")
 print ("zeta(1) =",zeta(1))
 
 # 6. zeta(2)=pi²/6 Bernoulli formula,k=1
-print ("*****************************************")
-print ("zeta(2)=pi²/6 see Bernoulli formula,k=1")
-print ("6. check zeta(2)=pi²/6=1,644934...:")
+print ("**************** 6. check *****************")
+print ("*** zeta(2)=pi²/6 Bernoulli formula,k=1 ***")
+print ("*** zeta(2)=pi²/6=1,64493406... ***********")
 print ("zeta(2) =",zeta(2))
 
 # 7. zeta(3)=1,2020...
-print ("*******************************************")
-print ("7. check zeta(3)= 1,202056...:")
+print ("************** 7. check *******************")
+print ("*** zeta(3)= 1,202056...*******************")
 print ("zeta(3) =",zeta(3))
 
 # 8. zeta(4)=(pi²)²/90 Bernoulli formula,k=2
-print ("*******************************************")
-print ("zeta(4)=(pi²)²/90 Bernoulli formula,k=2")
-print ("8. zeta(4)=((pi²))²/90 = 1,082323...:")
+print ("************* 8.check **********************")
+print ("** zeta(4)=(pi²)²/90 Bernoulli formula,k=2 *")
+print ("** zeta(4)=((pi²))²/90 = 1,08232323... *****")
 print ("zeta(4) =",zeta(4))
 
 # 9. zeta(5)=1,0369277...
-print ("*******************************************")
-print ("9. zeta(5)=1,0369277...:")
+print ("************* 9.check **********************")
+print ("*** zeta(5)=1,0369277... *******************")
 print ("zeta(5) =",zeta(5))
 
 # 10. zeta(6)=(pi²)³/945 Bernoulli formula,k=3
-print ("********************************************")
-print ("zeta(6)=(pi²)³/945 Bernoulli formula,k=3")
-print ("10. zeta(6)=(pi²)³/945=1,017343...:")
+print ("************** 10.check *********************")
+print ("** zeta(6)=(pi²)³/945 Bernoulli formula,k=3 *")
+print ("** zeta(6)=(pi²)³/945 = 1,01734330... *******")
 print ("zeta(6) =",zeta(6))
 
 # 11. zeta(7)=1,008349...
-print ("********************************************")
-print ("11. zeta(7)=1,008349...:")
+print ("************** 11.check *********************")
+print ("*** zeta(7)=1,008349...**********************")
 print ("zeta(7) =",zeta(7))
 
 # 12. zeta(8)=(pi²)²)²/9450 Bernoulli formula,k=4
-print ("********************************************")
-print ("zeta(8)=((pi²)²)²/9450 Bernoulli formula,k=4")
-print ("12. zeta(8)=1,0040773..:")
+print ("*************** 12. check ************************")
+print ("** zeta(8)=((pi²)²)²/9450 Bernoulli formula,k=4 **")
+print ("** zeta(8)=1,00407735... *************************")
 print ("zeta(8) =",zeta(8))
 
 # 13. zeta(s) for s=50,100,201,500, 1201
-print ("********************************************************")
-print ("*** 13. calc. zeta(s) for s = 50,100,201,500,1201 to ***")
-print ("*** check [lim(s->inf)](zeta(s))=1 for s=number > 1 ****")
-print ("********************************************************")
+print ("**************** 13. check************************")
+print ("*** zeta(s) for s = 50,100,500,1000,10000 to ****")
+print ("*** check [lim(s->inf)](zeta(s))=1 for s=int> 1 **")
+print ("**************************************************")
 print ("zeta(50) =",zeta(50))
+print ("***************** check zeta(100) ***********************")
+print ("** https://www.wolframalpha.com/input/?i=zeta%28100%29 **")
 print ("zeta(100) =",zeta(100))
-print ("zeta(201) =",zeta(201))
 print ("zeta(500) =",zeta(500))
-print ("zeta(1201) =",zeta(1201))
+print ("zeta(1000) =",zeta(1000))
+print ("zeta(10000) =",zeta(10000))
 
 
 # ### Item2.5: Riem. Fct. Equation (RFE) using Gamma-Fct. & Trivial zeros of Zeta-Fct

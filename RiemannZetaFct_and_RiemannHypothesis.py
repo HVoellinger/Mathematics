@@ -40,7 +40,7 @@
 
 
 print("** DirichletForm of the Riemann Zeta-Fuction (Euler-Function)**") 
-#print("** LATEX syntax zeta(s) for re(s)>1: $ \zeta(s)=\sum_{n=1}^\infty 1/n^s $ **")
+#print("LATEX syntax zeta(s), re(s)>1:$ \zeta(s)=\sum_{n=1}^\infty 1/n^s $")
 
 from IPython.display import Image
 
@@ -71,7 +71,7 @@ Image('Images/Basel_Problem.jpg')
 # In[3]:
 
 
-print("******* This is the famous Riemann Zeta(s)-Fct. for complex numbers s *******")
+print("*** This is the famous Riemann Zeta(s)-Fct. for s=complex numbers ***")
 
 from IPython.display import Image
 
@@ -88,10 +88,10 @@ Image('Images/complex_RiemannZeta-Formula.jpg')
 # In[4]:
 
 
-print ("***********************************************************************************")
-print ("*** The bridge between Riemann Zeta-fct in 'Complex Analysis' and prime numbers ***") 
-print ("** in 'Number Theory' is given by the Euler Product, which Euler proofed in 1735 **")
-print ("***********************************************************************************")
+print ("******************************************************************************")
+print ("** The bridge between Riemann Zeta-fct in Complex Analysis and prime numbers *") 
+print ("* in Number Theory is given by the Euler Product, which Euler proved in 1735 *")
+print ("******************************************************************************")
 
 from IPython.display import Image
 

@@ -104,7 +104,8 @@ Image('Images/EulerProduct.jpg')
 #     
 # In mathematics, the Riemann hypothesis is a conjecture that the Riemann zeta function has its zeros only at the negative even integers and complex numbers with real part = 1/2.
 # Many consider it to be the most important unsolved problem in pure mathematics.[1] It is of great interest in number theory because it implies results about the distribution of prime numbers. It was proposed by Bernhard Riemann (1859), after whom it is named.
-# The Riemann hypothesis and some of its generalizations, along with Goldbach's conjecture and the twin prime conjecture, comprise Hilbert's eighth problem in David Hilbert's list of 23 unsolved problems; it is also one of the Clay Mathematics Institute's Millennium Prize Problems. The name is also used for some closely related analogues, such as the Riemann hypothesis for curves over finite fields.  
+# The Riemann hypothesis and some of its generalizations, along with Goldbach's conjecture and the twin prime conjecture, comprise Hilbert's eighth problem in David Hilbert's list of 23 unsolved problems; it is also one of the Clay Mathematics Institute's Millennium Prize Problems. The name is also used for some closely related analogues, such as the Riemann hypothesis for curves over finite fields.
+# The first six zeros of zeta(s) are at s = 0.5 +/- 14.134725i; s=0.5 +/- 21.022040i;  s = 0.5 +/- 25.010858i 
 
 # ### Item2.1: Zero-free region of Zeta-Function
 # 
@@ -138,10 +139,10 @@ Image('Images/riemann-zeta1.jpg')
 # In[7]:
 
 
-print ("*************************************************************")
-print ("** Here is an example-plot of zeta function in more detail **") 
-print ("** See two zeros at the points z=0.5 + 14,12 & z=0.5-14,12 **")
-print ("*************************************************************")
+print ("***********************************************************************")
+print ("*** Example-plot of zeta(s) in the range |re(s)|< 6 & |im(s)|< 20i ****") 
+print ("*** In this range we see zeros at the points s = 0.5 +/- 14,134725i ***")
+print ("***********************************************************************")
 
 from IPython.display import Image
 
@@ -176,9 +177,9 @@ from scipy.special import binom
 # Program/Source Code (Python)using complex Riemann's Zeta-Fct (cRZ) for complex Numbers 
 # It is using the complex RiemannZeta formula (cRZ); see above
 
-print ("** Rounding errors may occur through the calculation of zeta(s,t) ***")
-print ("** Choosing a smaller value t,i.e. t=50 the error will get smaller **")
-print ("** During testing we found the best results with t=10 (t=1 is worser **")
+print ("** Because the cRZ method is an approximation method, rounding errors occur in the calculation of zeta(s,t) **")
+print ("** Choosing a smaller value t, i.e. t=50 the error will get smaller if im(s)=0, try this out for other cases **")
+print ("** During testing we found the best results with t=10 if im(s)=0; for other cases this may be wrong, try it! **")
      
 def zeta(s, t = 100):
     if s == 1:
@@ -189,7 +190,20 @@ def zeta(s, t = 100):
            for n in count(0))
     return sum(islice(term, t)) / (1 - 2 ** (1- s)) 
 
-print ("** End of Definition of main function zeta(s,t) using formula (cRZ) **")
+print(" ")
+print ("*** This ends the definition of main function zeta(s,t). Next we run some tests: ***")
+print (" ")
+print ("*** We calculate now the first six zeros of zeta(s); j denotes the imaginary unit: ***")
+# The first six zeros of zeta(s) are at s = 0.5 +/- 14.134725i; s=0.5 +/- 21.022040i;  s = 0.5 +/- 25.010858i 
+print (" ")
+print ("zeta(0.5+14.134725j) =",zeta(0.5+14.134725j))
+print ("zeta(0.5-14.134725j) =",zeta(0.5-14.134725j))
+print (" ")
+print ("zeta(0.5+21.022040j) =",zeta(0.5+21.022040j))
+print ("zeta(0.5-21.022040j) =",zeta(0.5-21.022040j))
+print (" ")
+print ("zeta(0.5+25.010858j) =",zeta(0.5+25.010858j))
+print ("zeta(0.5-25.010858j) =",zeta(0.5-25.010858j))
 
 
 # ### Item2.3: 3-dim. Plot of Riemann Zeta Fct. for complex plane
@@ -259,7 +273,6 @@ print ("zeta(-2) =",zeta(-2))
 # 3. zeta(-1)=-1/12=-0,08333333...
 print ("************* 3. check *****************")
 print ("*** zeta(-1) = -1/12 = -0,08333333... **")
-print ("zeta(-1) =",zeta(-1))
 
 # 4. zeta(0)=-1/2
 print ("************* 4. check *****************")
